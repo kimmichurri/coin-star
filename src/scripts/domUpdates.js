@@ -17,14 +17,22 @@ let domUpdates = {
 
   displayPuzzle(currentLetters) {
     let newArr = currentLetters.map((letter) => {
-      return `<div class="puzzle-letter-wrapper"><p class="puzzle-letter"> ${letter} </p></div>`
+      if (letter === ' ') {
+        return `<div class="puzzle-letter-wrapper break"><p class="puzzle-letter"> ${letter} </p></div>`
+      } else {
+        return `<div class="puzzle-letter-wrapper"><p class="puzzle-letter"> ${letter} </p></div>`
+      }
     })
+
     newArr.forEach((element) => {
-      $('.puzzle-display-container').append(element);
+      if(element.includes('break')) {
+        $('.puzzle-display-container').append(`<br/>`)
+      } else {
+        $('.puzzle-display-container').append(element);
+      }
     })
+   
   }
-  // $('.puzzle-display-container').append();
-
-}
-
-export default domUpdates;
+  }
+  
+  export default domUpdates

@@ -49,7 +49,7 @@ input,
 
 .puzzle-letter {
   display: inline;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 .puzzle-letter-wrapper {
