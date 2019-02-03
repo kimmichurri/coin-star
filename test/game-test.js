@@ -4,7 +4,7 @@ const expect = chai.expect;
 import spies from 'chai-spies';
 chai.use(spies);
 
-import Game from '../src/scripts/game.js';
+import Game from '../src/scripts/Game.js';
 import domUpdates from '../src/scripts/domUpdates.js';
 
 

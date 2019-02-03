@@ -1,7 +1,8 @@
-import Wheel from './wheel.js'
-import Player from './player.js'
+import Wheel from './Wheel.js'
+import Player from './Player.js'
 import data from '../data.js'
 import helper from './helper.js'
+import domUpdates from './domUpdates.js';
 
 class Game {
   constructor() {
@@ -32,8 +33,12 @@ class Game {
     let bonusPuzzle = data.puzzles.four_word_answers.puzzle_bank[randomIndex + 1];
 
     this.puzzleBank.push(puzzleOne, puzzleTwo, puzzleThree, puzzleFour, bonusPuzzle);
+    this.createPuzzzleArray();
+  }
 
-    console.log(this.puzzleBank);
+  createPuzzzleArray() {
+    let puzzleLetters = this.puzzleBank[0].correct_answer.split('');
+    domUpdates.displayPuzzle(puzzleLetters);
   }
 
   // resetWheel() {

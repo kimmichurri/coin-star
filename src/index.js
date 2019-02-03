@@ -1,5 +1,5 @@
 // This is the JavaScript entry file - your code begins here
-import Game from './scripts/game.js';
+import Game from './scripts/Game.js';
 import domUpdates from './scripts/domUpdates.js';
 import $ from 'jquery';
 import jQuery from 'jquery';
