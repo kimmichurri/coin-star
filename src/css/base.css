@@ -1,5 +1,7 @@
 body {
   background-color: #91a6e6;
+  /* display: grid;
+  grid-template-columns: 1fr 4fr; */
 }
 
 .login-form {
@@ -37,4 +39,21 @@ input,
 
 .bubble {
   height: 400px;
+}
+
+.puzzle-display-container {
+  background-color: magenta;
+  height: 900px;
+  width: 75%;
+}
+
+.puzzle-letter {
+  display: inline;
+  visibility: hidden;
+}
+
+.puzzle-letter-wrapper {
+  background-color: gray;
+  border: 2px solid black;
+  display: inline;
 }

@@ -2,7 +2,7 @@ import Wheel from './Wheel.js'
 import Player from './Player.js'
 import data from '../data.js'
 import helper from './helper.js'
-import domUpdates from './domUpdates.js';
+import domUpdates from './domUpdates.js'
 
 class Game {
   constructor() {
@@ -37,7 +37,8 @@ class Game {
   }
 
   createPuzzzleArray() {
-    let puzzleLetters = this.puzzleBank[0].correct_answer.split('');
+    let puzzleLetters = this.puzzleBank[0].correct_answer.toUpperCase().split('');
+    console.log(puzzleLetters);
     domUpdates.displayPuzzle(puzzleLetters);
   }
 
