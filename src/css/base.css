@@ -1,7 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #91a6e6;
-  /* display: grid;
-  grid-template-columns: 1fr 4fr; */
+  display: grid;
+  font-family: sans-serif;
+  grid-template-areas: 
+            "header header"
+            "players puzzle"
+            "players choice";
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 2fr 2fr; 
+}
+
+.player-section{
+ grid-area: players;
+}
+
+.header{
+  grid-area: header;
+}
+.choice-wrapper {
+  grid-area: choice;
+}
+
+.player-choices {
+
+}
+
+.letters-in-bank {
+  display: inline;
+}
+
+.podium {
+  border: 2px solid black;
+}
+
+.puzzle-display-container {
+  grid-area: puzzle;
+  background-color: #f69799;
+  height: 100%;
+  width: 100%;
+}
+
+.letter-bank {
+  grid-area: letters;
 }
 
 .login-form {
@@ -10,7 +54,6 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
-
 }
 
 input,
@@ -37,20 +80,26 @@ input,
   height: 200px;
 }
 
+.logo-name {
+  font-size: 80px;
+  text-align: center;
+  color: white;
+}
+
 .bubble {
   height: 400px;
 }
 
-.puzzle-display-container {
-  background-color: magenta;
-  height: 900px;
-  width: 75%;
+.exit-btn {
+  display: inline;
+  height: 20px;
+  width: 40px;
+  position: fixed;
+  right: 0px;
 }
 
 .puzzle-letter {
   display: inline;
-  /* visibility: hidden; */
-  /* margin: 5px; */
   padding: 10px;
 }
 
@@ -58,4 +107,8 @@ input,
   background-color: gray;
   border: 2px solid black;
   display: inline;
+}
+
+.hide {
+  display: none;
 }
