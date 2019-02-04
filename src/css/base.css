@@ -50,6 +50,8 @@ input,
 .puzzle-letter {
   display: inline;
   /* visibility: hidden; */
+  /* margin: 5px; */
+  padding: 10px;
 }
 
 .puzzle-letter-wrapper {

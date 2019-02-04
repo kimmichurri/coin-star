@@ -37,7 +37,7 @@ class Game {
   }
 
   createPuzzzleArray() {
-    let puzzleLetters = this.puzzleBank[3].correct_answer.toUpperCase().split('');
+    let puzzleLetters = this.puzzleBank[0].correct_answer.toUpperCase().split('');
     // console.log(puzzleLetters);
     domUpdates.displayPuzzle(puzzleLetters);
   }

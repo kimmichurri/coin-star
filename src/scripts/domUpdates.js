@@ -17,8 +17,11 @@ let domUpdates = {
 
   displayPuzzle(currentLetters) {
     let newArr = currentLetters.map((letter) => {
+      let specialCharacters = ["-", "&", "\'"];
       if (letter === ' ') {
         return `<div class="puzzle-letter-wrapper break"><p class="puzzle-letter"> ${letter} </p></div>`
+      } else if (specialCharacters.includes(letter)) {
+        return `<div class="puzzle-letter-wrapper"><p class="puzzle-letter special-character"> ${letter} </p></div>`
       } else {
         return `<div class="puzzle-letter-wrapper"><p class="puzzle-letter"> ${letter} </p></div>`
       }
