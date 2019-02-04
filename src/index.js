@@ -10,6 +10,7 @@ window.$ = jQuery;
 
 // Tell webpack to use a CSS file
 import './css/base.css';
+import './css/reset.css';
 
 //  Tell webpack to use an image (link to it in index.html)
 import './images/shroom-guy-bubble.png'
