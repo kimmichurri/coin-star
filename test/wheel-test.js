@@ -32,9 +32,8 @@ describe('Testing Wheel methods and properties', () => {
 
   it('should reassign this.currentSpace to have value', () => {
     expect(wheel.currentSpace).to.equal(null);
-    wheel.spaces = [600, 600, 600, 600, 600, 600]
-    wheel.spin()
-    expect(wheel.currentSpace).to.equal(600);
+    wheel.createSpaces()
+    expect(wheel.currentSpace).to.not.equal(null);
 
 
   })
