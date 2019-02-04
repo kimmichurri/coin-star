@@ -33,10 +33,10 @@ class Game {
     let bonusPuzzle = data.puzzles.four_word_answers.puzzle_bank[randomIndex + 1];
 
     this.puzzleBank.push(puzzleOne, puzzleTwo, puzzleThree, puzzleFour, bonusPuzzle);
-    this.createPuzzzleArray();
+    this.createPuzzleArray();
   }
 
-  createPuzzzleArray() {
+  createPuzzleArray() {
     let puzzleLetters = this.puzzleBank[0].correct_answer.toUpperCase().split('');
     // console.log(puzzleLetters);
     domUpdates.displayPuzzle(puzzleLetters);
