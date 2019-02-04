@@ -13,7 +13,8 @@ describe('Testing Game methods and properties', () => {
 
   beforeEach(function() {
     game = new Game();
-    chai.spy.on(domUpdates, 'displayPlayerNames', () => true);
+    chai.spy.on(domUpdates, 'displayPlayerNames', returns => true);
+    chai.spy.on(domUpdates, 'displayPuzzle', returns => true);
   });
   
   afterEach(function() {
