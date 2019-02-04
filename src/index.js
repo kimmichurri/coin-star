@@ -27,5 +27,9 @@ $('.js-start-button').on('click', (e) => {
   let game = new Game();
   game.startGame();
   game.createPlayers(newPlayers);
-  
+  $('.splash-page').addClass('hide')  
 });
+
+$('.js-exit-btn').on('click',() => {
+  location.reload();
+})

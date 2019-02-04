@@ -4,6 +4,9 @@
 
 body {
   background-color: #91a6e6;
+  
+}
+.game-wrapper {
   display: grid;
   font-family: sans-serif;
   grid-template-areas: 
@@ -12,6 +15,7 @@ body {
             "players choice";
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 2fr 2fr; 
+  margin: 10px;
 }
 
 .player-section{
@@ -95,7 +99,7 @@ input,
   height: 20px;
   width: 40px;
   position: fixed;
-  right: 0px;
+  right: 10px;
 }
 
 .puzzle-letter {
