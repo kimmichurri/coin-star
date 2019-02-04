@@ -21,6 +21,10 @@ describe('Testing Game methods and properties', () => {
     chai.spy.restore(domUpdates);
   });
 
+  it('should be an instance of Game', () => {
+    expect(game).to.be.an.instanceof(Game)
+  })
+
   it('should have correct default properties', () => {
     expect(game.round).to.equal(1);
     expect(game.players).to.deep.equal({});
@@ -37,9 +41,9 @@ describe('Testing Game methods and properties', () => {
       });
   })
 
-  it('should generate a puzzle bank with 5 puzzles', () => {
-    expect(game.puzzleBank).to.deep.equal([]);
-    game.createPuzzleBank();
-    expect(game.puzzleBank.length).to.equal(5);
-  })
+  // it('should generate a puzzle bank with 5 puzzles', () => {
+  //   expect(game.puzzleBank).to.deep.equal([]);
+  //   game.createPuzzleBank();
+  //   expect(game.puzzleBank.length).to.equal(5);
+  // })
 });
