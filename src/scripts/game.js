@@ -1,5 +1,6 @@
 import Wheel from './Wheel.js'
 import Player from './Player.js'
+import Puzzle from './Puzzle.js'
 import data from '../data.js'
 import helper from './helper.js'
 import domUpdates from './domUpdates.js'
@@ -7,22 +8,30 @@ import domUpdates from './domUpdates.js'
 class Game {
   constructor() {
     this.round = 1;
-    this.players = {};
+    this.players = [];
+    this.currentPlayer = this.players[0]
     this.wheel = [];
     this.puzzleBank = [];
+    this.currentPuzzle = [];
   }
 
   startGame() {
-    this.wheel = new Wheel();
     this.wheel.createSpaces();
     this.createPuzzleBank();
   }
 
   createPlayers(playerNames) {
     playerNames.forEach((name) => {
-      this.players[name] = new Player(name)    
+      let player = new Player(name)
+      this.players.push(player)
     })
   }
+
+  // switchPlayerTurn() {
+    //on switch??
+    //increment index of current player
+    //unless its index2 then reset to 0
+  // }
 
   createPuzzleBank() {
     let randomIndex = helper.getRandomInt(0, 23);
@@ -38,17 +47,15 @@ class Game {
 
   createPuzzleArray() {
     let puzzleLetters = this.puzzleBank[0].correct_answer.toUpperCase().split('');
-    // console.log(puzzleLetters);
     domUpdates.displayPuzzle(puzzleLetters);
+    this.currentPuzzle = puzzleLetters
+    
+
   }
 
   // resetWheel() {
-  //  // wheel.reset()
-  // }
-
-  // createWheel(){
-  //   //create a new instance of wheel
-  //   //set that wheel to equal this.wheel
+  // call wheel.createSpaces to created now spaces on the wheel
+  // for new round
   // }
    
 }

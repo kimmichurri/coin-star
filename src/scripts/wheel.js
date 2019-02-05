@@ -11,28 +11,16 @@ class Wheel {
   createSpaces() {
     let randomMin = helper.getRandomInt(1, 17);
     let randomMax = randomMin + 6;
-    this.spaces = data.wheel.slice(randomMin, randomMax);
-    this.spin()
+    let newSpaces = data.wheel.slice(randomMin, randomMax);
+    this.spaces.push(...newSpaces)
+  
   }
 
   spin() {
     let randomSpace = helper.getRandomInt(0, 6)
     this.currentSpace = this.spaces[randomSpace]
-    // console.log(this.currentSpace)
+    console.log('log current space', this.currentSpace)
   }
-
-  //reset() {
-  //resets your random spaces
-  // }
-
-
-
-
-
-  //reset wheel method here
-  //changes the spaces
-
-
 
 
 }

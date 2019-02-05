@@ -1,10 +1,13 @@
 // This is the JavaScript entry file - your code begins here
 import Game from './scripts/Game.js';
 import domUpdates from './scripts/domUpdates.js';
+import Wheel from './scripts/Wheel.js'
 import $ from 'jquery';
 import jQuery from 'jquery';
 window.$ = jQuery;
 
+let wheel;
+let game;
 
 // Do not delete or rename this file
 
@@ -24,12 +27,26 @@ import './images/shroom-guy-bubble.png'
 $('.js-start-button').on('click', (e) => {
   e.preventDefault();
   let newPlayers = domUpdates.displayPlayerNames();
-  let game = new Game();
+  game = new Game();
+  wheel = new Wheel();
+  game.wheel = wheel;
   game.startGame();
   game.createPlayers(newPlayers);
-  $('.splash-page').addClass('hide')  
-});
+  $('.js-splash-page').addClass('hide')  
+})
 
 $('.js-exit-btn').on('click',() => {
   location.reload();
 })
+
+$('.js-spin-btn').on('click', () => {
+  wheel.spin()
+})
+
+$('.letter-bank').on('click', (e) => {
+  if (game.currentPuzzle.includes(e.target.innerText)){
+    console.log('includes!')
+  }
+ 
+})
+

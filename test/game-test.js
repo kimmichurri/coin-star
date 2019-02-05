@@ -27,18 +27,19 @@ describe('Testing Game methods and properties', () => {
 
   it('should have correct default properties', () => {
     expect(game.round).to.equal(1);
-    expect(game.players).to.deep.equal({});
+    expect(game.players).to.deep.equal([]);
+    expect(game.currentPlayer).to.equal(game.players[0])
     expect(game.wheel).to.deep.equal([]);
     expect(game.puzzleBank).to.deep.equal([]); 
   });
 
   it('should take an array of names and reassign players property', () => {
     let playerNames = ['Kim']
-    expect(game.players).to.deep.equal({});
+    expect(game.players).to.deep.equal([]);
     game.createPlayers(playerNames);
     expect(game.players).to.deep.equal(
-      { 'Kim': {name: "Kim", roundCoins: 0, totalCoins: 0}
-      });
+      [{name: "Kim", roundCoins: 0, totalCoins: 0}]
+      );
   })
 
   // it('should generate a puzzle bank with 5 puzzles', () => {
