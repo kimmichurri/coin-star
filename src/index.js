@@ -32,7 +32,7 @@ $('.js-start-button').on('click', (e) => {
   game.wheel = wheel;
   game.startGame();
   game.createPlayers(newPlayers);
-  $('.js-splash-page').addClass('hide')  
+  $('.js-splash-page').addClass('hide');
 })
 
 $('.js-exit-btn').on('click',() => {
@@ -40,13 +40,23 @@ $('.js-exit-btn').on('click',() => {
 })
 
 $('.js-spin-btn').on('click', () => {
-  wheel.spin()
+  wheel.spin();
+  if (wheel.currentSpace === 'BANKRUPT') {
+    console.log('BANKRUPT');
+    //add disable-clicks class
+  } else if (wheel.currentSpace === 'LOSE A TURN') {
+    console.log('LOSE A TURN');
+    //add disable-clicks class
+  } else {
+    console.log('got to else');
+    $('.letter-bank').removeClass('disable-clicks');
+    $('.letter-bank').on('click', (e) => {
+      console.log('into click handler');
+      game.checkPlayerLetter(e.target.innerText, wheel.currentSpace);
+      console.log(e.target.innerText);
+    })
+
+  }
 })
 
-$('.letter-bank').on('click', (e) => {
-  if (game.currentPuzzle.includes(e.target.innerText)){
-    console.log('includes!')
-  }
- 
-})
 

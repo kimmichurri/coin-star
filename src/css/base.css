@@ -44,6 +44,8 @@ body {
 
 .letters-in-bank {
   display: inline;
+  font-size: 40px;
+  margin: 5px;
 }
 
 .podium {
@@ -61,6 +63,9 @@ body {
   grid-area: letters;
 }
 
+.disable-clicks {
+  pointer-events: none;
+}
 
 
 input,
