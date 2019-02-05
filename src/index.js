@@ -48,12 +48,9 @@ $('.js-spin-btn').on('click', () => {
     console.log('LOSE A TURN');
     //add disable-clicks class
   } else {
-    console.log('got to else');
     $('.letter-bank').removeClass('disable-clicks');
     $('.letter-bank').on('click', (e) => {
-      console.log('into click handler');
-      game.checkPlayerLetter(e.target.innerText, wheel.currentSpace);
-      console.log(e.target.innerText);
+      game.players[game.currentPlayer].checkPlayerLetter(game.currentPuzzle,e.target.innerText, wheel.currentSpace);
     })
 
   }

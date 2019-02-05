@@ -8,7 +8,7 @@ class Game {
   constructor() {
     this.round = 1;
     this.players = [];
-    this.currentPlayer = {};
+    this.currentPlayer = 0;
     this.wheel = [];
     this.puzzleBank = [];
     this.currentPuzzle = [];
@@ -24,7 +24,6 @@ class Game {
       let player = new Player(name)
       this.players.push(player)
     })
-    this.currentPlayer = this.players[0];
   }
 
   // switchPlayerTurn() {
@@ -51,17 +50,7 @@ class Game {
     this.currentPuzzle = puzzleLetters
   }
 
-  checkPlayerLetter(letter, currentSpinValue) {
-    if (this.currentPuzzle.includes(letter)) {
-      console.log(letter);
-      //check if letter clicked is included in our letters array
-      //update roundCoins for that play on dom
-      this.currentPlayer.roundCoins += 1;
-      console.log(this.currentPlayer);
-    }
-    //grabbing user letter on idex.js
-    //conmpare which letter we target on the dom to the current puzzle letters for validation et all
-  }
+
 
   //add BANKRUPT METHOD {
     //change roundCoins in game class to 0
