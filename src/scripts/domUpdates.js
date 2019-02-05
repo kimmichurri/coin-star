@@ -16,18 +16,19 @@ let domUpdates = {
   },
 
   displayPuzzle(currentLetters) {
-    let newArr = currentLetters.map((letter) => {
+    console.log(currentLetters);
+    let mapLetters = currentLetters.map((letter) => {
       let specialCharacters = ["-", "&", "\'"];
       if (letter === ' ') {
         return `<div class="puzzle-letter-wrapper break"><p class="puzzle-letter"> ${letter} </p></div>`
       } else if (specialCharacters.includes(letter)) {
         return `<div class="puzzle-letter-wrapper"><p class="puzzle-letter special-character"> ${letter} </p></div>`
       } else {
-        return `<div class="puzzle-letter-wrapper"><p class="puzzle-letter"> ${letter} </p></div>`
+        return `<div class="puzzle-letter-wrapper"><p class="hidden-letter puzzle-letter"> ${letter} </p></div>`
       }
     })
 
-    newArr.forEach((element) => {
+    mapLetters.forEach((element) => {
       if(element.includes('break')) {
         $('.puzzle-display-container').append(`<br/>`)
       } else {
