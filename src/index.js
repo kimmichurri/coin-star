@@ -52,6 +52,9 @@ $('.js-spin-btn').on('click', () => {
     $('.letter-bank').on('click', (e) => {
       game.players[game.currentPlayer].checkPlayerLetter(game.currentPuzzle, e.target.innerText, wheel.currentSpace);
       domUpdates.revealLetter(e.target.innerText, game.currentPuzzle);
+      if($(e.target).hasClass('letters-in-bank')) {
+        $(e.target).addClass('hidden-letter') 
+      }
     })
 
   }
@@ -60,6 +63,9 @@ $('.js-spin-btn').on('click', () => {
 $('.js-buy-vowel').on('click', () => {
   if (game.players[game.currentPlayer].roundCoins >= 100) {
     $('.vowel').removeClass('disable-clicks')
+  }
+  else if(game.players[game.currentPlayer].roundCoins < 100) {
+    alert('you need 100 coins to buy a vowel movement')
   }
 })
 
