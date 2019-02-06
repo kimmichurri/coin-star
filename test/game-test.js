@@ -13,8 +13,8 @@ describe('Testing Game methods and properties', () => {
 
   beforeEach(function() {
     game = new Game();
-    chai.spy.on(domUpdates, 'displayPlayerNames', returns => true);
-    chai.spy.on(domUpdates, 'displayPuzzle', returns => true);
+    chai.spy.on(domUpdates, 'displayPlayerNames', () => true);
+    chai.spy.on(domUpdates, 'displayPuzzle', () => true);
   });
   
   afterEach(function() {
@@ -22,8 +22,8 @@ describe('Testing Game methods and properties', () => {
   });
 
   it('should be an instance of Game', () => {
-    expect(game).to.be.an.instanceof(Game)
-  })
+    expect(game).to.be.an.instanceof(Game);
+  });
 
   it('should have correct default properties', () => {
     expect(game.round).to.equal(1);
@@ -34,13 +34,13 @@ describe('Testing Game methods and properties', () => {
   });
 
   it('should take an array of names and reassign players property', () => {
-    let playerNames = ['Kim']
+    let playerNames = ['Kim'];
     expect(game.players).to.deep.equal([]);
     game.createPlayers(playerNames);
     expect(game.players).to.deep.equal(
       [{name: "Kim", roundCoins: 0, totalCoins: 0}]
-      );
-  })
+    );
+  });
 
   // it('should generate a puzzle bank with 5 puzzles', () => {
   //   expect(game.puzzleBank).to.deep.equal([]);
