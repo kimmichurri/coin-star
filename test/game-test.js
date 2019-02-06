@@ -28,7 +28,7 @@ describe('Testing Game methods and properties', () => {
   it('should have correct default properties', () => {
     expect(game.round).to.equal(1);
     expect(game.players).to.deep.equal([]);
-    expect(game.currentPlayer).to.equal(game.players[0])
+    expect(game.currentPlayer).to.equal(0);
     expect(game.wheel).to.deep.equal([]);
     expect(game.puzzleBank).to.deep.equal([]); 
   });
