@@ -35,7 +35,7 @@ $('.js-start-button').on('click', (e) => {
   $('.js-splash-page').addClass('hide');
 })
 
-$('.js-exit-btn').on('click',() => {
+$('.js-exit-btn').on('click', () => {
   location.reload();
 })
 
@@ -54,6 +54,12 @@ $('.js-spin-btn').on('click', () => {
       domUpdates.revealLetter(e.target.innerText, game.currentPuzzle);
     })
 
+  }
+})
+
+$('.js-buy-vowel').on('click', () => {
+  if (game.players[game.currentPlayer].roundCoins >= 100) {
+    $('.vowel').removeClass('disable-clicks')
   }
 })
 

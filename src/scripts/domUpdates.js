@@ -52,12 +52,10 @@ let domUpdates = {
   },
 
   revealLetter(selectedLetter) {
-    console.log('selected letter', typeof selectedLetter);
     let $puzzleLetters = $('.puzzle-letter');
 
     $puzzleLetters.each((index, puzzlet) => {
       if (puzzlet.innerHTML.includes(selectedLetter)) {
-        console.log('what is puzzlet', puzzlet);
         $(puzzlet).removeClass('hidden-letter');
       }
     })

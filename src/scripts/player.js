@@ -9,7 +9,6 @@ class Player {
 
   checkPlayerLetter(puzzle, letter, currentSpinValue) {
     if (puzzle.includes(letter)) {
-      console.log(letter, 'remove class here');
       this.roundCoins += currentSpinValue;
       domUpdates.updateScoreDisplay(this.name, this.roundCoins)
     }
