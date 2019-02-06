@@ -27,9 +27,9 @@ class Game {
   }
 
   // switchPlayerTurn() {
-    //on switch??
-    //increment index of current player
-    //unless its index2 then reset to 0
+  //on switch??
+  //increment index of current player
+  //unless its index2 then reset to 0
   // }
 
   createPuzzleBank() {
@@ -53,7 +53,7 @@ class Game {
 
 
   //add BANKRUPT METHOD {
-    //change roundCoins in game class to 0
+  //change roundCoins in game class to 0
   // }
 
   // resetWheel() {

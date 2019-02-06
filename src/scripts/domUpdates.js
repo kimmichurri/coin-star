@@ -38,7 +38,7 @@ let domUpdates = {
    
   },
 
-    updateScoreDisplay(player, coins) {
+  updateScoreDisplay(player, coins) {
     let name1 = $('.js-player-name-display-one')
     let name2 = $('.js-player-name-display-two')
     let name3 = $('.js-player-name-display-three')
@@ -49,24 +49,20 @@ let domUpdates = {
     foundName.siblings('.roundCoinDisplay').text(coins)
     //increment foundPlayer roundCoinDisplay with coins
 
-    },
+  },
 
-    revealLetter(selectedLetter) {
-    console.log('selected letter', selectedLetter);
-    // let $puzzleContainerChildren = $('.puzzle-display-container').children('div').children('.hidden-letter');
-    let $puzzleContainerChildren = $('.puzzle-letter');
+  revealLetter(selectedLetter) {
+    console.log('selected letter', typeof selectedLetter);
+    let $puzzleLetters = $('.puzzle-letter');
 
-    console.log($puzzleContainerChildren);
-
+    $puzzleLetters.each((index, puzzlet) => {
+      if (puzzlet.innerHTML.includes(selectedLetter)) {
+        console.log('what is puzzlet', puzzlet);
+        $(puzzlet).removeClass('hidden-letter');
+      }
+    })
     
-      // let filteredPuzzleLetters = currentPuzzle.filter((letter) => {
-      // return letter === selectedLetter;
-      // })
-      // filteredPuzzleLetters.forEach((letter) => {
-      //   // letter.removeClass('hidden-letter');
-      // })
-      // selectedLetter.removeClass('.hidden-letter');
-    }
   }
+}
   
-  export default domUpdates
+export default domUpdates
