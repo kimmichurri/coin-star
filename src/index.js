@@ -32,7 +32,9 @@ $('.js-start-button').on('click', (e) => {
   game.wheel = wheel;
   game.startGame();
   game.createPlayers(newPlayers);
+
   $('.js-splash-page').addClass('hide');
+
 })
 
 $('.js-exit-btn').on('click', () => {
@@ -41,28 +43,31 @@ $('.js-exit-btn').on('click', () => {
 
 $('.js-spin-btn').on('click', () => {
   wheel.spin();
-  // $(wheel.currentSpace).show();
   $('.current-space-container').append(wheel.currentSpace);
   if (wheel.currentSpace === 'BANKRUPT') {
     game.players[game.currentPlayer].roundCoins = 0;
-    console.log('BANKRUPT');
     domUpdates.updateScoreDisplay(game.players[game.currentPlayer].name, 0);
-    //add disable-clicks class
+    game.switchPlayerTurn();
   } else if (wheel.currentSpace === 'LOSE A TURN') {
-    console.log('LOSE A TURN');
-    //add disable-clicks class
+    game.switchPlayerTurn();
   } else {
     $('.letter-bank').removeClass('disable-clicks');
-    $('.letter-bank').on('click', (e) => {
-      game.players[game.currentPlayer].checkPlayerLetter(game.currentPuzzle, e.target.innerText, wheel.currentSpace);
-      domUpdates.revealLetter(e.target.innerText, game.currentPuzzle);
-      if ($(e.target).hasClass('letters-in-bank')) {
-        $(e.target).addClass('hidden-letter') 
-      }
-    })
-
+    alert('Please choose a consonant')
   }
-})
+  
+});
+
+$('.letter-bank').on('click', (e) => {
+  if (!$('.letter-bank').hasClass('disable-clicks')){
+    game.players[game.currentPlayer].checkPlayerLetter(game.currentPuzzle, e.target.innerText, wheel.currentSpace);
+    domUpdates.revealLetter(e.target.innerText.trim());
+    if ($(e.target).hasClass('letters-in-bank')) {
+        $(e.target).addClass('hidden-letter') 
+        game.switchPlayerTurn();
+      }
+    }
+  })
+
 
 $('.js-buy-vowel').on('click', () => {
   if (game.players[game.currentPlayer].roundCoins >= 100) {

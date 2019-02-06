@@ -26,11 +26,16 @@ class Game {
     })
   }
 
-  // switchPlayerTurn() {
-  //on switch??
-  //increment index of current player
-  //unless its index2 then reset to 0
-  // }
+  switchPlayerTurn() {
+    if (this.currentPlayer < 2) {
+      this.currentPlayer++
+      console.log(this.currentPlayer)
+    } else {
+      this.currentPlayer = 0
+      console.log(this.currentPlayer)
+    }
+    domUpdates.highlightCurrentPlayer(this.currentPlayer)
+  }
 
   createPuzzleBank() {
     let randomIndex = helper.getRandomInt(0, 23);
@@ -56,7 +61,7 @@ class Game {
   //change roundCoins in game class to 0
   // }
 
-  // resetWheel() {
+  // resetWheel {
   // call wheel.createSpaces to created now spaces on the wheel
   // for new round
   // }

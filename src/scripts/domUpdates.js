@@ -38,11 +38,26 @@ let domUpdates = {
    
   },
 
+  highlightCurrentPlayer(playerIndex){
+    let podium1 = $('.podium1');
+    let podium2 = $('.podium2');
+    let podium3 = $('.podium3');
+    let allPodiums = [podium1, podium2, podium3];
+    allPodiums.forEach((podium, i) => {
+      if(i === playerIndex) {
+        $(podium).addClass('highlight')
+      } else {
+        $(podium).removeClass('highlight')
+      }
+    })
+      
+  },
+
   updateScoreDisplay(playerName, coins) {
-    let name1 = $('.js-player-name-display-one')
-    let name2 = $('.js-player-name-display-two')
-    let name3 = $('.js-player-name-display-three')
-    let allNames = [name1, name2, name3]
+    let name1 = $('.js-player-name-display-one');
+    let name2 = $('.js-player-name-display-two');
+    let name3 = $('.js-player-name-display-three');
+    let allNames = [name1, name2, name3];
     let foundName = allNames.find((name) => {
       return name.text() === playerName
     })
@@ -51,9 +66,9 @@ let domUpdates = {
 
   revealLetter(selectedLetter) {
     let $puzzleLetters = $('.puzzle-letter');
-
     $puzzleLetters.each((index, puzzlet) => {
-      if (puzzlet.innerHTML.includes(selectedLetter)) {
+      let puzzletText = $(puzzlet).text().trim()
+      if ( puzzletText === selectedLetter)  {
         $(puzzlet).removeClass('hidden-letter');
       }
     })
