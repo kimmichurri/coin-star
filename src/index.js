@@ -50,7 +50,8 @@ $('.js-spin-btn').on('click', () => {
   } else {
     $('.letter-bank').removeClass('disable-clicks');
     $('.letter-bank').on('click', (e) => {
-      game.players[game.currentPlayer].checkPlayerLetter(game.currentPuzzle,e.target.innerText, wheel.currentSpace);
+      game.players[game.currentPlayer].checkPlayerLetter(game.currentPuzzle, e.target.innerText, wheel.currentSpace);
+      domUpdates.revealLetter(e.target.innerText, game.currentPuzzle);
     })
 
   }

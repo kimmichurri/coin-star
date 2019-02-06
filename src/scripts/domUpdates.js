@@ -49,6 +49,23 @@ let domUpdates = {
     foundName.siblings('.roundCoinDisplay').text(coins)
     //increment foundPlayer roundCoinDisplay with coins
 
+    },
+
+    revealLetter(selectedLetter) {
+    console.log('selected letter', selectedLetter);
+    // let $puzzleContainerChildren = $('.puzzle-display-container').children('div').children('.hidden-letter');
+    let $puzzleContainerChildren = $('.puzzle-letter');
+
+    console.log($puzzleContainerChildren);
+
+    
+      // let filteredPuzzleLetters = currentPuzzle.filter((letter) => {
+      // return letter === selectedLetter;
+      // })
+      // filteredPuzzleLetters.forEach((letter) => {
+      //   // letter.removeClass('hidden-letter');
+      // })
+      // selectedLetter.removeClass('.hidden-letter');
     }
   }
   
