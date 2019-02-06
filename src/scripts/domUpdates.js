@@ -38,17 +38,15 @@ let domUpdates = {
    
   },
 
-  updateScoreDisplay(player, coins) {
+  updateScoreDisplay(playerName, coins) {
     let name1 = $('.js-player-name-display-one')
     let name2 = $('.js-player-name-display-two')
     let name3 = $('.js-player-name-display-three')
     let allNames = [name1, name2, name3]
     let foundName = allNames.find((name) => {
-      return name.text() === player
+      return name.text() === playerName
     })
     foundName.siblings('.roundCoinDisplay').text(coins)
-    //increment foundPlayer roundCoinDisplay with coins
-
   },
 
   revealLetter(selectedLetter) {

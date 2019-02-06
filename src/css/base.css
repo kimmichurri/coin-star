@@ -135,3 +135,8 @@ input,
 .highlight {
   background-color: #e8df9c;
 }
+
+.current-space-container {
+  border: 2px solid black;
+  height: 60px;
+}

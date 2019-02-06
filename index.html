@@ -6,9 +6,9 @@
   <body>
     <section class="js-splash-page">
       <form class="login-form">
-        <input type="text" class=" top-input submit-name js-player-one-input" value="1" placeholder="Friend One">
-        <input type="text" value="2" class="submit-name js-player-two-input" placeholder="Friend Two">
-        <input type="text" value="3" class="submit-name js-player-three-input" placeholder="Friend Three">
+        <input type="text" class=" top-input submit-name js-player-one-input" value="Friend One" placeholder="Friend One" maxlength="12">
+        <input type="text" class="submit-name js-player-two-input" value="Friend Two" placeholder="Friend Two" maxlength="12">
+        <input type="text" class="submit-name js-player-three-input" value="Friend Three" placeholder="Friend Three" maxlength="12">
         <button class="start-btn js-start-button">Play For Coins!</button>
       </form>
     </section>
@@ -41,8 +41,8 @@
         </article>
       </section>
       <section class="puzzle-display-container">
-        <h2>category clue</h2>
-        <h3>instructions</h3>
+        <h2>Category Clue</h2>
+        <h3>Instructions: Please spin, solve the puzzle, or buy a vowel. You must have at least 100 coins to buy a vowel.</h3>
       </section>
       <div class="choice-wrapper">
         <section class="player-choices">
@@ -84,6 +84,9 @@
           <p class="letters-in-bank">X</p>
           <p class="letters-in-bank">Y</p>
           <p class="letters-in-bank">Z</p>
+        </section>
+        <section class="current-space-container">
+          <p>You landed on: </p>
         </section>
       </div>
     </div>

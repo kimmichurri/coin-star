@@ -41,8 +41,12 @@ $('.js-exit-btn').on('click', () => {
 
 $('.js-spin-btn').on('click', () => {
   wheel.spin();
+  // $(wheel.currentSpace).show();
+  $('.current-space-container').append(wheel.currentSpace);
   if (wheel.currentSpace === 'BANKRUPT') {
+    game.players[game.currentPlayer].roundCoins = 0;
     console.log('BANKRUPT');
+    domUpdates.updateScoreDisplay(game.players[game.currentPlayer].name, 0);
     //add disable-clicks class
   } else if (wheel.currentSpace === 'LOSE A TURN') {
     console.log('LOSE A TURN');
