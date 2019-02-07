@@ -6,13 +6,37 @@ body {
   background-color: #91a6e6;
   
 }
+.splash-page {
+  background-image: url('../images/shroom-guy-bubble.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  height: 800px; 
+  margin-bottom: 100px;
+  padding: 150px;
+  width: 2000px;
+}
 
 .login-form {
-  background-image: url('../images/shroom-guy-bubble.png');
-  background-size: cover;
-  display: flex;
+  align-content: center;
   flex-direction: column;
-  height: 800px;
+  height: 100%;
+  width: 100%;
+}
+.submit-name,
+.start-btn {
+  width: 400px;
+  border-radius: 15px;
+  font-size: 20px;
+  height: 100px;
+  margin: 0 auto 0 500px;
+  text-align: center;
+}
+
+.start-btn {
+  background-color: #91a6e6;
+  color: white;
+  width: 405px;
 }
 
 .game-wrapper {
@@ -37,10 +61,6 @@ body {
 .choice-wrapper {
   grid-area: choice;
   text-align: center;
-}
-
-.player-choices {
-
 }
 
 .letters-in-bank {
@@ -91,26 +111,6 @@ body {
 
 .disable-clicks {
   pointer-events: none;
-}
-
-.submit-name,
-.start-btn {
-  border-radius: 15px;
-  font-size: 20px;
-  height: 100px;
-  margin: 0 auto 0 600px;
-  text-align: center;
-  width: 400px;
-}
-
-.start-btn {
-  background-color: #91a6e6;
-  color: white;
-  width: 405px;
-}
-
-.top-input {
-  margin-top: 150px;
 }
 
 .logo {
