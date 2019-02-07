@@ -59,26 +59,24 @@ class Game {
     domUpdates.highlightCurrentPlayer(this.currentPlayer);
   }
 
-  // resetWheel {
-  // call wheel.createSpaces to created now spaces on the wheel
-  // for new round
-  // }
 
   increaseRound() {
     this.currentPuzzle.shift();
-    console.log(this.currentPuzzle);
     this.players.sort((playerA, playerB) => {
       return playerB.roundCoins - playerA.roundCoins;
     });
-    console.log(this.players); 
+    const sortedPlayerNames = this.players.map((player)=>{
+      return player.name
+    })
+    domUpdates.displayPlayerNames(sortedPlayerNames)
     this.players[0].updateWinnerCoins(this.players[0].roundCoins);
     this.players.forEach((player) => {
       player.updateAllRoundCoins();
+      domUpdates.updateScoreDisplay(player.name, player.roundCoins, player.totalCoins)
     });
-    console.log(this.players);
+   
     //highest player- move round coins to total coins
     //wipe everyone else round coins
-    domUpdates.updateTotalCoinsDisplay();
     //update coins in player object
     //call resetWheel
     //reset this.currentplay to 0

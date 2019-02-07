@@ -2,15 +2,19 @@ import Game from './Game.js';
 
 let domUpdates = {
 
-  displayPlayerNames() {
+  updatePlayerNames() {
     let $playerOneInput = $('.js-player-one-input').val();
     let $playerTwoInput = $('.js-player-two-input').val();
     let $playerThreeInput = $('.js-player-three-input').val();
     const playerNames = [$playerOneInput, $playerTwoInput, $playerThreeInput];
-    $('.js-player-name-display-one').text($playerOneInput);
-    $('.js-player-name-display-two').text($playerTwoInput);
-    $('.js-player-name-display-three').text($playerThreeInput);
-    return playerNames
+    this.displayPlayerNames(playerNames)
+    return playerNames;
+  },
+
+  displayPlayerNames(playerNames) {
+    $('.js-player-name-display-one').text(playerNames[0]);
+    $('.js-player-name-display-two').text(playerNames[1]);
+    $('.js-player-name-display-three').text(playerNames[2]);
   },
 
   displayPuzzle(currentCategory, currentLetters) {
@@ -50,7 +54,8 @@ let domUpdates = {
       
   },
 
-  updateScoreDisplay(playerName, coins) {
+  updateScoreDisplay(playerName, roundCoins, totalCoins) {
+
     let name1 = $('.js-player-name-display-one');
     let name2 = $('.js-player-name-display-two');
     let name3 = $('.js-player-name-display-three');
@@ -58,7 +63,10 @@ let domUpdates = {
     let foundName = allNames.find((name) => {
       return name.text() === playerName
     })
-    foundName.siblings('.roundCoinDisplay').text(coins);
+    foundName.siblings('.roundCoinDisplay').text(roundCoins);
+    if(totalCoins) {
+    foundName.siblings('.totalCoinDisplay').text(totalCoins);
+    }
   },
 
   revealLetter(selectedLetter) {

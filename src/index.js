@@ -26,7 +26,7 @@ import './images/shroom-guy-bubble.png'
  
 $('.js-start-button').on('click', (e) => {
   e.preventDefault();
-  let newPlayers = domUpdates.displayPlayerNames();
+  let newPlayers = domUpdates.updatePlayerNames();
   game = new Game();
   wheel = new Wheel();
   game.wheel = wheel;
