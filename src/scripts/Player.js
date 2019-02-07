@@ -20,7 +20,7 @@ class Player {
     if (joinedPuzzle.includes(upperCaseValue)) {
       this.roundCoins = this.roundCoins*2;
       domUpdates.updateScoreDisplay(this.name, this.roundCoins)
-      //increment round
+      //increment round this.round++
       //update total coins for this player
       //clear round coins for other players
     } else {

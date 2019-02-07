@@ -75,8 +75,12 @@ let domUpdates = {
     
   },
 
-  appendEntryBox(){
+  appendEntryBox() {
     $('.solve-pop-up').removeClass('hide')
+  },
+
+  updateTotalCoinsDisplay() {
+    
   }
 }
   
