@@ -32,18 +32,16 @@ $('.js-start-button').on('click', (e) => {
   game.wheel = wheel;
   game.startGame();
   game.createPlayers(newPlayers);
-
   $('.js-splash-page').addClass('hide');
-
-})
+});
 
 $('.js-exit-btn').on('click', () => {
   location.reload();
-})
+});
 
 $('.js-spin-btn').on('click', () => {
   wheel.spin();
-  $('.current-space-container').append(wheel.currentSpace);
+  $('.current-space-container').empty().append(wheel.currentSpace);
   if (wheel.currentSpace === 'BANKRUPT') {
     game.players[game.currentPlayer].roundCoins = 0;
     domUpdates.updateScoreDisplay(game.players[game.currentPlayer].name, 0);
@@ -51,42 +49,41 @@ $('.js-spin-btn').on('click', () => {
   } else if (wheel.currentSpace === 'LOSE A TURN') {
     game.switchPlayerTurn();
   } else {
-    $('.js-buy-vowel').removeClass('disable-clicks')
+    $('.js-buy-vowel').removeClass('disable-clicks');
     $('.letter-bank').removeClass('disable-clicks');
-    alert('Please choose a consonant')
+    alert('Please choose a consonant');
   }
-  
 });
 
 $('.letter-bank').on('click', (e) => {
-  if (!$('.letter-bank').hasClass('disable-clicks')){
+  if (!$('.letter-bank').hasClass('disable-clicks')) {
     game.players[game.currentPlayer].checkPlayerLetter(game.currentPuzzle, e.target.innerText, wheel.currentSpace);
     domUpdates.revealLetter(e.target.innerText.trim());
     if ($(e.target).hasClass('letters-in-bank')) {
-        $(e.target).addClass('hidden-letter') 
-        game.switchPlayerTurn();
-      }
+      $(e.target).addClass('hidden-letter'); 
+      game.switchPlayerTurn();
     }
-  })
+  }
+});
 
 
 $('.js-buy-vowel').on('click', () => {
   if (game.players[game.currentPlayer].roundCoins >= 100) {
-    $('.vowel').removeClass('disable-clicks')
-    alert('Please select a vowel')
-    game.players[game.currentPlayer].roundCoins -= 100
+    $('.vowel').removeClass('disable-clicks');
+    alert('Please select a vowel');
+    game.players[game.currentPlayer].roundCoins -= 100;
   } else if (game.players[game.currentPlayer].roundCoins < 100) {
-    alert('you need 100 coins to buy a vowel movement')
+    alert('You need 100 coins to buy a vowel');
   }
-})
+});
 
 $('.solve-btn').on('click', () => {
   domUpdates.appendEntryBox()
-})
+});
 
 $('.submit-guess-btn').on('click', (e) => {
-e.preventDefault()
-let inputValue = $('.solve-puzzle-input').val()
-game.players[game.currentPlayer].checkSolutionInput(game.currentPuzzle, inputValue)
-$('.solve-pop-up').addClass('hide')
-})
+  e.preventDefault()
+  let inputValue = $('.solve-puzzle-input').val()
+  game.players[game.currentPlayer].checkSolutionInput(game.currentPuzzle, inputValue)
+  $('.solve-pop-up').addClass('hide')
+});

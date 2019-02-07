@@ -11,7 +11,7 @@ class Player {
     if (puzzle.includes(letter)) {
       this.roundCoins += currentSpinValue;
       domUpdates.updateScoreDisplay(this.name, this.roundCoins)
-    }
+    } 
    
   }
   checkSolutionInput(puzzle, value){
@@ -19,8 +19,8 @@ class Player {
     let upperCaseValue = value.toUpperCase()
     if (joinedPuzzle.includes(upperCaseValue)) {
       this.roundCoins = this.roundCoins*2;
-      domUpdates.updateScoreDisplay(this.name, this.roundCoins)
-      //increment round this.round++
+      domUpdates.updateScoreDisplay(this.name, this.roundCoins);
+      domUpdates.revealGuess();
       //update total coins for this player
       //clear round coins for other players
     } else {
