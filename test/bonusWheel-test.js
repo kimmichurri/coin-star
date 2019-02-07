@@ -18,6 +18,10 @@ describe('Testing bonusWheel methods and properties', function() {
     chai.spy.restore(domUpdates);
   });
 
+  it('should be an instance of Bonus Wheel', () => {
+    expect(bonusWheel).to.be.an.instanceof(BonusWheel);
+  })
+
   it('should have correct default properties', function() {
     expect(bonusWheel.increasedCoins).to.equal(0);
   });

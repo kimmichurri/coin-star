@@ -14,6 +14,8 @@ describe('Testing Game methods and properties', () => {
   beforeEach(function() {
     game = new Game();
     chai.spy.on(domUpdates, 'displayPuzzle', () => true);
+    chai.spy.on(domUpdates, 'highlightCurrentPlayer', () => true);
+    chai.spy.on(domUpdates, 'vowelDisableClicks', () => true);
   });
   
   afterEach(function() {
@@ -45,13 +47,27 @@ describe('Testing Game methods and properties', () => {
     expect(game.puzzleBank).to.deep.equal([]);
     game.createPuzzleBank();
     expect(game.puzzleBank.length).to.equal(5);
-  })
+  });
 
   it('should generate an array of letters as current puzzle', () => {
     expect(game.currentPuzzle).to.deep.equal([]);
     game.createPuzzleBank();
     expect(game.currentPuzzle.length).to.be.above(1);
-  })
+  });
+
+  it('should increment current player index to switch player turn', () => {
+    expect(game.currentPlayer).to.equal(0);
+    game.switchPlayerTurn();
+    expect(game.currentPlayer).to.equal(1);
+  });
+
+  it('should update wheel spaces after invoking reset wheel', () => {
+
+  });
+
+  it('should access new puzzle and reset round coins to 0 on increase round', () => {
+    
+  });
 
   
 });

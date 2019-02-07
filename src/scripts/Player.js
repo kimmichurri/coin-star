@@ -14,7 +14,7 @@ class Player {
     } 
    
   }
-  checkSolutionInput(puzzle, value){
+  checkSolutionInput(puzzle, value) {
     let joinedPuzzle = puzzle.join('')
     let upperCaseValue = value.toUpperCase()
     if (joinedPuzzle.includes(upperCaseValue)) {
