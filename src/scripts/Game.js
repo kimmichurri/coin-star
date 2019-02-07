@@ -54,7 +54,7 @@ class Game {
       this.currentPlayer = 0
       console.log(this.currentPlayer)
     }
-    domUpdates.highlightCurrentPlayer(this.currentPlayer)
+    domUpdates.highlightCurrentPlayer(this.currentPlayer);
   }
 
   // resetWheel {
