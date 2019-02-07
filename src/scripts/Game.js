@@ -36,11 +36,13 @@ class Game {
 
     this.puzzleBank.push(puzzleOne, puzzleTwo, puzzleThree, puzzleFour, bonusPuzzle);
     this.createPuzzleArray();
+    console.log('puzzleBank', this.puzzleBank);
   }
 
   createPuzzleArray() {
+    let currentRoundCategory = this.puzzleBank[0].category;
     let puzzleLetters = this.puzzleBank[0].correct_answer.toUpperCase().split('');
-    domUpdates.displayPuzzle(puzzleLetters);
+    domUpdates.displayPuzzle(currentRoundCategory, puzzleLetters);
     this.currentPuzzle = puzzleLetters
     console.log('puzzle letters', puzzleLetters)
   }
@@ -54,13 +56,23 @@ class Game {
       this.currentPlayer = 0
       console.log(this.currentPlayer)
     }
-    domUpdates.highlightCurrentPlayer(this.currentPlayer)
+    domUpdates.highlightCurrentPlayer(this.currentPlayer);
   }
 
   // resetWheel {
   // call wheel.createSpaces to created now spaces on the wheel
   // for new round
   // }
+
+  increaseRound() {
+    //shift off of this.currentPuzzle
+    //call domUpdates.updateTotalCoinsDisplay
+    //update coins in player object
+    //call resetWheel
+    //reset this.currentplay to 0
+    //call a domupdate to display current round and category clue
+    //remove hidden class on letter bank
+  }
    
 }
 export default Game;

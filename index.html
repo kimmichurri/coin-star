@@ -14,7 +14,7 @@
     </section>
     <form class="solve-pop-up hide">
       <p>instructions here</p>
-      <input class="solve-puzzle-input" required="true" type="text"/>
+      <input class="solve-puzzle-input game-play-button" required="true" type="text"/>
       <button class="submit-guess-btn">Submit</button>
     </form>
     <div class="game-wrapper">
@@ -23,21 +23,21 @@
         <h1 class="logo-name">Coin-St&#9734;r</h1>
       </section> 
       <section class="player-section">
-        <article class="highlight podium1">
+        <article class="highlight podium1 podium">
           <p class="js-player-name-display-one">Name</p>
           <p>Round Coins</p>
           <p class="roundCoinDisplay">0</p>
           <p>Total Coins</p>
           <p>0</p>
         </article>
-        <article class="podium2">
+        <article class="podium2 podium">
           <p class="js-player-name-display-two">Name</p>
           <p>Round Coins 0</p>
           <p class='roundCoinDisplay'>0</p>
           <p>Total Coins</p>
           <p>0</p>
         </article>
-        <article class="podium3">
+        <article class="podium3 podium">
           <p class="js-player-name-display-three">Name</p>
           <p>Round Coins</p>
           <p class='roundCoinDisplay'>0</p>
@@ -46,18 +46,18 @@
         </article>
       </section>
       <section class="puzzle-display-container">
-        <h2>Category Clue</h2>
-        <h3>Instructions: Please spin, solve the puzzle, or buy a vowel. You must have at least 100 coins to buy a vowel.</h3>
+        <h2 class="category-text">Category</h2>
+        <h3 class="round-instructions">Instructions: Please spin, solve the puzzle, or buy a vowel. You must have at least 100 coins to buy a vowel.</h3>
       </section>
       <div class="choice-wrapper">
         <section class="player-choices">
-          <button>
+          <button class="game-play-button">
             <p class="solve-btn">Solve the Puzzle</p>
           </button>
-          <button class="js-spin-btn">
+          <button class="js-spin-btn game-play-button">
             <p>Spin</p>
           </button>
-          <button>
+          <button class="game-play-button">
             <p class="js-buy-vowel disable-clicks">Buy a Vowel</p>
           </button>
         </section>
@@ -90,8 +90,10 @@
           <p class="letters-in-bank">Y</p>
           <p class="letters-in-bank">Z</p>
         </section>
+        <section>
+          <p class="spin-amount-display">You landed on: </p>
+        </section>
         <section class="current-space-container">
-          <p>You landed on: </p>
         </section>
       </div>
     </div>

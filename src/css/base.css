@@ -36,6 +36,7 @@ body {
 }
 .choice-wrapper {
   grid-area: choice;
+  text-align: center;
 }
 
 .player-choices {
@@ -53,19 +54,37 @@ body {
 }
 
 .solve-pop-up {
-  z-index: 1;
   position: absolute;
   top: 0;
+  z-index: 1;
 
 }
 
 .puzzle-display-container {
-  grid-area: puzzle;
   background-color: #f69799;
+  grid-area: puzzle;
   height: 100%;
+  text-align: center;
   width: 100%;
 }
 
+.category-text {
+  font-size: 30px;
+}
+
+.letter-bank,
+.category-text,
+.round-instructions,
+.podium,
+.spin-amount-display,
+.current-space-container
+ {
+  padding: 10px;
+}
+
+.podium {
+  margin: 8px;
+}
 .letter-bank {
   grid-area: letters;
 }
@@ -76,18 +95,18 @@ body {
 
 .submit-name,
 .start-btn {
-  width: 400px;
+  border-radius: 15px;
+  font-size: 20px;
   height: 100px;
   margin: 0 auto 0 600px;
-  border-radius: 15px;
   text-align: center;
-  font-size: 20px;
+  width: 400px;
 }
 
 .start-btn {
-  width: 405px;
   background-color: #91a6e6;
   color: white;
+  width: 405px;
 }
 
 .top-input {
@@ -99,9 +118,9 @@ body {
 }
 
 .logo-name {
+  color: white;
   font-size: 80px;
   text-align: center;
-  color: white;
 }
 
 .bubble {
@@ -111,9 +130,25 @@ body {
 .exit-btn {
   display: inline;
   height: 20px;
-  width: 40px;
   position: fixed;
   right: 10px;
+  width: 40px;
+}
+
+.game-play-button {
+  background-color: #FFF;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 1px 2px;
+  font-size: 16px;
+  height: 50px;
+  margin: 20px;
+  width: 200px;
+}
+
+.game-play-button:hover {
+  background-color: #e8df9c;
+  font-weight: bold;
 }
 
 .puzzle-letter {
@@ -144,5 +179,10 @@ body {
 
 .current-space-container {
   border: 2px solid black;
-  height: 60px;
+  font-size: 50px;
+  height: 70px;
+}
+
+.spin-amount-display {
+  font-size: 30px;
 }
