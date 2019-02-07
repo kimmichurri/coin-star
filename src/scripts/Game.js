@@ -47,8 +47,8 @@ class Game {
     console.log('puzzle letters', puzzleLetters)
   }
 
-   switchPlayerTurn() {
-    $('.js-buy-vowel').addClass('disable-clicks')
+  switchPlayerTurn() {
+    domUpdates.vowelDisableClicks();
     if (this.currentPlayer < 2) {
       this.currentPlayer++
       console.log(this.currentPlayer)

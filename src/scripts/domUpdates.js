@@ -1,5 +1,3 @@
-import Game from './Game.js';
-
 let domUpdates = {
 
   displayPlayerNames() {
@@ -35,7 +33,7 @@ let domUpdates = {
     })
   },
 
-  highlightCurrentPlayer(playerIndex){
+  highlightCurrentPlayer(playerIndex) {
     let podium1 = $('.podium1');
     let podium2 = $('.podium2');
     let podium3 = $('.podium3');
@@ -69,16 +67,13 @@ let domUpdates = {
         $(puzzlet).removeClass('hidden-letter');
       }
     })
-      if ($puzzleLetters.hasClass('hidden-letter')) {
-        console.log('keep going');
-      } else {
-        console.log('solved it');
-        alert('Congratulations! You solved this puzzle! On to the next round!');
-      }
+    if ($puzzleLetters.hasClass('hidden-letter')) {
+      console.log('keep going');
+    } else {
+      console.log('solved it');
+      alert('Congratulations! You solved this puzzle! On to the next round!');
     }
-,
-
-  // $(letter).hasClass('hidden-letter')
+  },
 
   revealGuess() {
     $('.puzzle-letter').removeClass('hidden-letter');
@@ -92,6 +87,10 @@ let domUpdates = {
 
   appendEntryBox() {
     $('.solve-pop-up').removeClass('hide');
+  },
+
+  vowelDisableClicks() {
+    $('.js-buy-vowel').addClass('disable-clicks');
   },
 
   // updateTotalCoinsDisplay() {
