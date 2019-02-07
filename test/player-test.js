@@ -20,6 +20,10 @@ describe('Testing Player methods and properties', () => {
     chai.spy.restore(domUpdates);
   });
 
+  it('should be an instance of Player', () => {
+    expect(player).to.be.an.instanceof(Player);
+  });
+
   it('should have correct default properties', () => {
     expect(player.name).to.equal('Kristen');
     expect(player.roundCoins).to.equal(0);

@@ -18,6 +18,10 @@ describe('Testing Wheel methods and properties', () => {
     chai.spy.restore(domUpdates);
   });
 
+  it('should be an instance of Wheel', () => {
+    expect(wheel).to.be.an.instanceof(Wheel);
+  });
+
   it('should have correct default properties', () => {
     expect(wheel.spaces).to.deep.equal([]);
     expect(wheel.currentSpace).to.equal(null);
@@ -35,8 +39,6 @@ describe('Testing Wheel methods and properties', () => {
     wheel.spaces = [600, 600, 600, 600, 600, 600];
     wheel.spin();
     expect(wheel.currentSpace).to.equal(600);
-
-
-  })
+  });
 
 });
