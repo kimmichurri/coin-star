@@ -36,7 +36,6 @@ class Game {
 
     this.puzzleBank.push(puzzleOne, puzzleTwo, puzzleThree, puzzleFour, bonusPuzzle);
     this.createPuzzleArray();
-    console.log('puzzleBank', this.puzzleBank);
   }
 
   createPuzzleArray() {
@@ -44,17 +43,14 @@ class Game {
     let puzzleLetters = this.puzzleBank[0].correct_answer.toUpperCase().split('');
     domUpdates.displayPuzzle(currentRoundCategory, puzzleLetters);
     this.currentPuzzle = puzzleLetters
-    console.log('puzzle letters', puzzleLetters)
   }
 
   switchPlayerTurn() {
     domUpdates.vowelDisableClicks();
     if (this.currentPlayer < 2) {
       this.currentPlayer++
-      console.log(this.currentPlayer)
     } else {
       this.currentPlayer = 0
-      console.log(this.currentPlayer)
     }
     domUpdates.highlightCurrentPlayer(this.currentPlayer);
   }
@@ -75,13 +71,6 @@ class Game {
       domUpdates.updateScoreDisplay(player.name, player.roundCoins, player.totalCoins)
     });
    
-    //highest player- move round coins to total coins
-    //wipe everyone else round coins
-    //update coins in player object
-    //call resetWheel
-    //reset this.currentplay to 0
-    //call a domupdate to display current round and category clue
-    //remove hidden class on letter bank
   }
    
 }

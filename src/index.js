@@ -1,4 +1,3 @@
-// This is the JavaScript entry file - your code begins here
 import Game from './scripts/Game.js';
 import domUpdates from './scripts/domUpdates.js';
 import Wheel from './scripts/Wheel.js'
@@ -6,23 +5,13 @@ import $ from 'jquery';
 import jQuery from 'jquery';
 window.$ = jQuery;
 
-let wheel;
-let game;
-
-// Do not delete or rename this file
-
-// Tell webpack to use a CSS file
 import './css/base.css';
 import './css/reset.css';
 
-//  Tell webpack to use an image (link to it in index.html)
 import './images/shroom-guy-bubble.png'
 
-
-// Whatever filepath you use here, copy that into the HTML
-
-
-//This is the JavaScript entry file - your code begins here.');
+let wheel;
+let game; 
  
 $('.js-start-button').on('click', (e) => {
   e.preventDefault();

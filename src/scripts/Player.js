@@ -12,7 +12,6 @@ class Player {
       this.roundCoins += currentSpinValue;
       domUpdates.updateScoreDisplay(this.name, this.roundCoins)
     } 
-   
   }
 
   checkSolutionInput(puzzle, value) {
@@ -22,16 +21,10 @@ class Player {
       this.roundCoins = this.roundCoins*2;
       domUpdates.updateScoreDisplay(this.name, this.roundCoins);
       domUpdates.revealGuess();
-      //update total coins for this player
-      //clear round coins for other players
-    } else {
-      //increment turn
-    }
-
+    } 
   }
 
   updateWinnerCoins (highestPlayerCoins) {
-    console.log(highestPlayerCoins);
     this.totalCoins = highestPlayerCoins;
   }
 
