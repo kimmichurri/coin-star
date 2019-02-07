@@ -74,9 +74,15 @@ body {
 }
 
 .solve-pop-up {
+  background-color: white;
+  height: 150px;
+  left: 650px;
   position: absolute;
-  top: 0;
+  top: 350px;
+  width: 350px;
   z-index: 1;
+  border: solid;
+  padding: 10px;
 
 }
 
