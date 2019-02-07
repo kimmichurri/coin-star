@@ -65,8 +65,20 @@ class Game {
   // }
 
   increaseRound() {
-    //shift off of this.currentPuzzle
-    //call domUpdates.updateTotalCoinsDisplay
+    this.currentPuzzle.shift();
+    console.log(this.currentPuzzle);
+    this.players.sort((playerA, playerB) => {
+      return playerB.roundCoins - playerA.roundCoins;
+    });
+    console.log(this.players); 
+    this.players[0].updateWinnerCoins(this.players[0].roundCoins);
+    this.players.forEach((player) => {
+      player.updateAllRoundCoins();
+    });
+    console.log(this.players);
+    //highest player- move round coins to total coins
+    //wipe everyone else round coins
+    domUpdates.updateTotalCoinsDisplay();
     //update coins in player object
     //call resetWheel
     //reset this.currentplay to 0

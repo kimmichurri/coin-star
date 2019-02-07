@@ -1,3 +1,5 @@
+import Game from './Game.js';
+
 let domUpdates = {
 
   displayPlayerNames() {
@@ -68,17 +70,17 @@ let domUpdates = {
       }
     })
     if ($puzzleLetters.hasClass('hidden-letter')) {
-      console.log('keep going');
+      alert('You guessed the letter!');
+      return true;
     } else {
-      console.log('solved it');
-      alert('Congratulations! You solved this puzzle! On to the next round!');
+      return false;
     }
   },
 
   revealGuess() {
-    $('.puzzle-letter').removeClass('hidden-letter');
-    alert('Great job! You won this round!');
-    game.increaseRound();
+    let $puzzleLetters = $('.puzzle-letter');
+    $puzzleLetters.removeClass('hidden-letter');
+    alert('Congratulations! You solved this puzzle! On to the next round!');
   },
 
   reinstatePuzzleBank() {
@@ -93,9 +95,9 @@ let domUpdates = {
     $('.js-buy-vowel').addClass('disable-clicks');
   },
 
-  // updateTotalCoinsDisplay() {
+  updateTotalCoinsDisplay() {
     
-  // },
+  },
 
 }
   

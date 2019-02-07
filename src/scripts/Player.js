@@ -14,6 +14,7 @@ class Player {
     } 
    
   }
+
   checkSolutionInput(puzzle, value) {
     let joinedPuzzle = puzzle.join('')
     let upperCaseValue = value.toUpperCase()
@@ -27,6 +28,15 @@ class Player {
       //increment turn
     }
 
+  }
+
+  updateWinnerCoins (highestPlayerCoins) {
+    console.log(highestPlayerCoins);
+    this.totalCoins = highestPlayerCoins;
+  }
+
+  updateAllRoundCoins() {
+    this.roundCoins = 0;
   }
 
 }
