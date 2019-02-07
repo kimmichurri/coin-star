@@ -14,6 +14,20 @@ class Player {
     }
    
   }
+  checkSolutionInput(puzzle, value){
+    let joinedPuzzle = puzzle.join('')
+    let upperCaseValue = value.toUpperCase()
+    if (joinedPuzzle.includes(upperCaseValue)) {
+      this.roundCoins = this.roundCoins*2;
+      domUpdates.updateScoreDisplay(this.name, this.roundCoins)
+      //increment round
+      //update total coins for this player
+      //clear round coins for other players
+    } else {
+      //increment turn
+    }
+
+  }
 
 }
 export default Player;

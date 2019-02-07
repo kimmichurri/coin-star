@@ -52,6 +52,13 @@ body {
   border: 2px solid black;
 }
 
+.solve-pop-up {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+
+}
+
 .puzzle-display-container {
   grid-area: puzzle;
   background-color: #f69799;
@@ -67,8 +74,7 @@ body {
   pointer-events: none;
 }
 
-
-input,
+.submit-name,
 .start-btn {
   width: 400px;
   height: 100px;

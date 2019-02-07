@@ -51,6 +51,7 @@ $('.js-spin-btn').on('click', () => {
   } else if (wheel.currentSpace === 'LOSE A TURN') {
     game.switchPlayerTurn();
   } else {
+    $('.js-buy-vowel').removeClass('disable-clicks')
     $('.letter-bank').removeClass('disable-clicks');
     alert('Please choose a consonant')
   }
@@ -72,9 +73,20 @@ $('.letter-bank').on('click', (e) => {
 $('.js-buy-vowel').on('click', () => {
   if (game.players[game.currentPlayer].roundCoins >= 100) {
     $('.vowel').removeClass('disable-clicks')
+    alert('Please select a vowel')
+    game.players[game.currentPlayer].roundCoins -= 100
   } else if (game.players[game.currentPlayer].roundCoins < 100) {
     alert('you need 100 coins to buy a vowel movement')
   }
 })
 
+$('.solve-btn').on('click', () => {
+  domUpdates.appendEntryBox()
+})
 
+$('.submit-guess-btn').on('click', (e) => {
+e.preventDefault()
+let inputValue = $('.solve-puzzle-input').val()
+game.players[game.currentPlayer].checkSolutionInput(game.currentPuzzle, inputValue)
+$('.solve-pop-up').addClass('hide')
+})

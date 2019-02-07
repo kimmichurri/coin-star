@@ -13,7 +13,6 @@ describe('Testing Game methods and properties', () => {
 
   beforeEach(function() {
     game = new Game();
-    chai.spy.on(domUpdates, 'displayPlayerNames', () => true);
     chai.spy.on(domUpdates, 'displayPuzzle', () => true);
   });
   
@@ -42,9 +41,17 @@ describe('Testing Game methods and properties', () => {
     );
   });
 
-  // it('should generate a puzzle bank with 5 puzzles', () => {
-  //   expect(game.puzzleBank).to.deep.equal([]);
-  //   game.createPuzzleBank();
-  //   expect(game.puzzleBank.length).to.equal(5);
-  // })
+  it('should generate a puzzle bank with 5 puzzles', () => {
+    expect(game.puzzleBank).to.deep.equal([]);
+    game.createPuzzleBank();
+    expect(game.puzzleBank.length).to.equal(5);
+  })
+
+  it('should generate an array of letters as current puzzle', () => {
+    expect(game.currentPuzzle).to.deep.equal([]);
+    game.createPuzzleBank();
+    expect(game.currentPuzzle.length).to.be.above(1);
+  })
+
+  
 });

@@ -26,17 +26,6 @@ class Game {
     })
   }
 
-  switchPlayerTurn() {
-    if (this.currentPlayer < 2) {
-      this.currentPlayer++
-      console.log(this.currentPlayer)
-    } else {
-      this.currentPlayer = 0
-      console.log(this.currentPlayer)
-    }
-    domUpdates.highlightCurrentPlayer(this.currentPlayer)
-  }
-
   createPuzzleBank() {
     let randomIndex = helper.getRandomInt(0, 23);
     let puzzleOne = data.puzzles.one_word_answers.puzzle_bank[randomIndex];
@@ -53,13 +42,20 @@ class Game {
     let puzzleLetters = this.puzzleBank[0].correct_answer.toUpperCase().split('');
     domUpdates.displayPuzzle(puzzleLetters);
     this.currentPuzzle = puzzleLetters
+    console.log('puzzle letters', puzzleLetters)
   }
 
-
-
-  //add BANKRUPT METHOD {
-  //change roundCoins in game class to 0
-  // }
+   switchPlayerTurn() {
+    $('.js-buy-vowel').addClass('disable-clicks')
+    if (this.currentPlayer < 2) {
+      this.currentPlayer++
+      console.log(this.currentPlayer)
+    } else {
+      this.currentPlayer = 0
+      console.log(this.currentPlayer)
+    }
+    domUpdates.highlightCurrentPlayer(this.currentPlayer)
+  }
 
   // resetWheel {
   // call wheel.createSpaces to created now spaces on the wheel

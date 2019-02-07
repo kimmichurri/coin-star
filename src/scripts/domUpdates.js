@@ -61,7 +61,7 @@ let domUpdates = {
     let foundName = allNames.find((name) => {
       return name.text() === playerName
     })
-    foundName.siblings('.roundCoinDisplay').text(coins)
+    foundName.siblings('.roundCoinDisplay').text(coins);
   },
 
   revealLetter(selectedLetter) {
@@ -73,6 +73,10 @@ let domUpdates = {
       }
     })
     
+  },
+
+  appendEntryBox(){
+    $('.solve-pop-up').removeClass('hide')
   }
 }
   
