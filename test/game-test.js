@@ -32,6 +32,7 @@ describe('Testing Game methods and properties', () => {
     expect(game.currentPlayer).to.equal(0);
     expect(game.wheel).to.deep.equal([]);
     expect(game.puzzleBank).to.deep.equal([]); 
+    expect(game.currentPuzzle).to.deep.equal([]);
   });
 
   it('should take an array of names and reassign players property', () => {
@@ -61,10 +62,11 @@ describe('Testing Game methods and properties', () => {
     expect(game.currentPlayer).to.equal(1);
   });
 
-  it('should shift off round one puzzle', () => {
+  it('should shift off round one puzzle and update player coins', () => {
     expect(game.round).to.equal(1);
     expect(game.puzzleBank.length).to.equal(0);
-    game.createPlayers(['Casey', 'Jon']); 
+    game.createPlayers(['Casey', 'Jon']);
+    game.players[0].roundCoins = 30;
     game.puzzleBank = [ {  
       category: 'The 90s',
       number_of_words: 1,
@@ -84,8 +86,8 @@ describe('Testing Game methods and properties', () => {
   ]
     game.increaseRound();
     expect(game.puzzleBank.length).to.equal(1);
+    expect(game.players[0].totalCoins).to.equal(30);
     expect(game.round).to.equal(2);
   });
-
-
+  
 });
