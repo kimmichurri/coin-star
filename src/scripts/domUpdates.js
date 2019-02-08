@@ -118,11 +118,7 @@ let domUpdates = {
 
   solveButtonDisable() {
     $('.js-solve-btn').addClass('disable-clicks')
-  },
-
-  // updateTotalCoinsDisplay() {
-    
-  // },
+  }
 
 }
   

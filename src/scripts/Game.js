@@ -59,7 +59,7 @@ class Game {
 
 
   increaseRound() {
-    if (this.round === 2) {
+    if (this.round < 4) {
       this.round++;
     } 
     else {
@@ -100,13 +100,8 @@ class Game {
     });
     this.players = [this.players[0]];
     this.currentPlayer = 0;
-    this.updatePlayerDisplays(mappedPlayerNames[0]);
     domUpdates.highlightCurrentPlayer(0);
   }
-
-  removeOtherPlayers() {
-    
-  }
-   
+  
 }
 export default Game;
