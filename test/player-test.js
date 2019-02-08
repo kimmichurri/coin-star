@@ -31,11 +31,33 @@ describe('Testing Player methods and properties', () => {
   });
 
   it('should increase round coins if player selects correct letter', () => {
-    
+    expect(player.roundCoins).to.equal(0);
+    let currentSpinValue = 400;
+    let puzzle = ['I'];
+    let letter = 'I';
+    player.checkPlayerLetter(puzzle, letter, currentSpinValue);
+    expect(player.roundCoins).to.equal(400);
   });
 
   it('should validate solution input and double round coins if correct', () => {
+    let puzzle = ['H', 'A', 'T'];
+    let value = 'hat';
+    player.roundCoins = 50;
+    player.checkSolutionInput(puzzle, value);
+    expect(player.roundCoins).to.equal(100);
+  });
 
+  it('should update winner coins', () => {
+    player.totalCoins = 0;
+    let highestPlayerCoins = 1600;
+    player.updateWinnerCoins(highestPlayerCoins);
+    expect(player.totalCoins).to.equal(1600);
+  });
+
+  it('should reset all round coins to 0 at end of round', () => {
+    player.roundCoins = 90;
+    player.updateAllRoundCoins();
+    expect(player.roundCoins).to.equal(0);
   });
 
 });

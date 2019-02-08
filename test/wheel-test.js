@@ -31,7 +31,6 @@ describe('Testing Wheel methods and properties', () => {
     expect(wheel.spaces).to.deep.equal([]);
     wheel.createSpaces();
     expect(wheel.spaces.length).to.equal(6);
-
   });
 
   it('should reassign this.currentSpace to have value', () => {

@@ -26,4 +26,10 @@ describe('Testing bonusWheel methods and properties', function() {
     expect(bonusWheel.increasedCoins).to.equal(0);
   });
 
+  it('should create an array of 6 bonus wheel spaces', () => {
+    expect(bonusWheel.spaces).to.deep.equal([]);
+    bonusWheel.createSpaces();
+    expect(bonusWheel.spaces.length).to.equal(6);
+  });
+
 });

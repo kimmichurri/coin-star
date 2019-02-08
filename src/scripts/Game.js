@@ -91,7 +91,6 @@ class Game {
   bonusRound() {
     this.wheel = new BonusWheel();
     this.wheel.createSpaces();
-    console.log(this.wheel);
     this.players.sort((playerA, playerB) => {
       return playerB.totalCoins - playerA.totalCoins;
     });
