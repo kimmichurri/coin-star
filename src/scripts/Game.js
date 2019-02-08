@@ -47,6 +47,7 @@ class Game {
 
   switchPlayerTurn() {
     domUpdates.vowelDisableClicks();
+    domUpdates.consonantDisableClicks();
     if (this.currentPlayer < 2) {
       this.currentPlayer++
     } else {
@@ -61,14 +62,14 @@ class Game {
     this.players.sort((playerA, playerB) => {
       return playerB.roundCoins - playerA.roundCoins;
     });
-    const sortedPlayerNames = this.players.map((player)=>{
+    const mappedPlayerNames = this.players.map((player)=> {
       return player.name
-    })
-    domUpdates.displayPlayerNames(sortedPlayerNames)
+    });
+    domUpdates.displayPlayerNames(mappedPlayerNames);
     this.players[0].updateWinnerCoins(this.players[0].roundCoins);
     this.players.forEach((player) => {
       player.updateAllRoundCoins();
-      domUpdates.updateScoreDisplay(player.name, player.roundCoins, player.totalCoins)
+      domUpdates.updateScoreDisplay(player.name, player.roundCoins, player.totalCoins);
     });
    
   }

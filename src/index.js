@@ -39,13 +39,14 @@ $('.js-spin-btn').on('click', () => {
     game.switchPlayerTurn();
   } else {
     $('.js-buy-vowel').removeClass('disable-clicks');
-    $('.letter-bank').removeClass('disable-clicks');
+    $('.letters-in-bank').removeClass('disable-clicks');
+    $('.js-solve-btn').removeClass('disable-clicks');
     alert('Please select a letter or buy a vowel');
   }
 });
 
-$('.letter-bank').on('click', (e) => {
-  if (!$('.letter-bank').hasClass('disable-clicks')) {
+$('.letters-in-bank').on('click', (e) => {
+  if (!$('.letters-in-bank').hasClass('disable-clicks')) {
     game.players[game.currentPlayer].checkPlayerLetter(game.currentPuzzle, e.target.innerText, wheel.currentSpace);
     let areLettersHidden = domUpdates.revealLetter(e.target.innerText.trim());
     if (!areLettersHidden) {

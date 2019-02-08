@@ -101,6 +101,15 @@ let domUpdates = {
 
   vowelDisableClicks() {
     $('.js-buy-vowel').addClass('disable-clicks');
+    $('.vowel').addClass('disable-clicks');
+  },
+
+  consonantDisableClicks() {
+    $('.letters-in-bank').addClass('disable-clicks');
+  },
+
+  solveButtonDisable() {
+    $('.js-solve-btn').addClass('disable-clicks');
   },
 
   updateTotalCoinsDisplay() {

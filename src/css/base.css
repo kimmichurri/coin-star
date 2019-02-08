@@ -116,6 +116,7 @@ body {
 }
 
 .disable-clicks {
+  color: gray;
   pointer-events: none;
 }
 
@@ -155,6 +156,13 @@ body {
 .game-play-button:hover {
   background-color: #e8df9c;
   font-weight: bold;
+}
+
+#spin-btn {
+  font-size: 30px;
+  height: 75px;
+  margin: 30px;
+  width: 300px;
 }
 
 .puzzle-letter {
