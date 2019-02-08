@@ -64,7 +64,7 @@ let domUpdates = {
       return name.text() === playerName
     })
     foundName.siblings('.roundCoinDisplay').text(roundCoins);
-    if(totalCoins) {
+    if (totalCoins) {
     foundName.siblings('.totalCoinDisplay').text(totalCoins);
     }
   },
@@ -75,10 +75,10 @@ let domUpdates = {
       let puzzletText = $(puzzlet).text().trim();
       if ( puzzletText === selectedLetter)  {
         $(puzzlet).removeClass('hidden-letter');
+        alert('You guessed the letter!');
       }
     })
     if ($puzzleLetters.hasClass('hidden-letter')) {
-      alert('You guessed the letter!');
       return true;
     } else {
       return false;
@@ -105,16 +105,16 @@ let domUpdates = {
   },
 
   consonantDisableClicks() {
-    $('.letters-in-bank').addClass('disable-clicks');
+    $('.consonant').addClass('disable-clicks');
   },
 
   solveButtonDisable() {
-    $('.js-solve-btn').addClass('disable-clicks');
+    $('.js-solve-btn').addClass('disable-clicks')
   },
 
-  updateTotalCoinsDisplay() {
+  // updateTotalCoinsDisplay() {
     
-  },
+  // },
 
 }
   

@@ -39,25 +39,22 @@ $('.js-spin-btn').on('click', () => {
     game.switchPlayerTurn();
   } else {
     $('.js-buy-vowel').removeClass('disable-clicks');
-    $('.letters-in-bank').removeClass('disable-clicks');
+    $('.consonant').removeClass('disable-clicks');
     $('.js-solve-btn').removeClass('disable-clicks');
     alert('Please select a letter or buy a vowel');
   }
 });
 
 $('.letters-in-bank').on('click', (e) => {
-  if (!$('.letters-in-bank').hasClass('disable-clicks')) {
     game.players[game.currentPlayer].checkPlayerLetter(game.currentPuzzle, e.target.innerText, wheel.currentSpace);
     let areLettersHidden = domUpdates.revealLetter(e.target.innerText.trim());
     if (!areLettersHidden) {
-      domUpdates.revealGuess();
       game.increaseRound();
     }
     if ($(e.target).hasClass('letters-in-bank')) {
       $(e.target).addClass('hidden-letter'); 
       game.switchPlayerTurn();
     }
-  }
 });
 
 

@@ -64,6 +64,7 @@ body {
 }
 
 .letters-in-bank {
+  cursor: pointer;
   display: inline;
   font-size: 40px;
   margin: 5px;

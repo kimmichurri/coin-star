@@ -42,7 +42,7 @@ class Game {
     let currentRoundCategory = this.puzzleBank[0].category;
     let puzzleLetters = this.puzzleBank[0].correct_answer.toUpperCase().split('');
     domUpdates.displayPuzzle(currentRoundCategory, puzzleLetters);
-    this.currentPuzzle = puzzleLetters
+    this.currentPuzzle = puzzleLetters;
   }
 
   switchPlayerTurn() {
@@ -58,7 +58,7 @@ class Game {
 
 
   increaseRound() {
-    this.currentPuzzle.shift();
+    this.puzzleBank.shift();
     this.players.sort((playerA, playerB) => {
       return playerB.roundCoins - playerA.roundCoins;
     });

@@ -13,10 +13,7 @@ describe('Testing Game methods and properties', () => {
 
   beforeEach(function() {
     game = new Game();
-    chai.spy.on(domUpdates, 'displayPuzzle', () => true);
-    chai.spy.on(domUpdates, 'highlightCurrentPlayer', () => true);
-    chai.spy.on(domUpdates, 'vowelDisableClicks', () => true);
-    chai.spy.on(domUpdates, 'displayPlayerNames', () => true);
+    chai.spy.on(domUpdates, ['displayPuzzle', 'highlightCurrentPlayer', 'vowelDisableClicks', 'displayPlayerNames', 'consonantDisableClicks'], () => true);
   });
   
   afterEach(function() {
@@ -62,15 +59,10 @@ describe('Testing Game methods and properties', () => {
     expect(game.currentPlayer).to.equal(1);
   });
 
-  it('should access new puzzle and reset round coins to 0 on increase round', () => {
-    expect(game.currentPuzzle.length).to.equal(5);
+  it('should shift off round one puzzle', () => {
+    expect(game.puzzleBank.length).to.equal(0);
     game.increaseRound();
-    expect(game.currentPuzzle.length).to.equal(4);
-    domUpdates.displayPlayerNames(sortedPlayerNames);
-  });
-
-  it('should update wheel spaces after invoking reset wheel', () => {
-
+    expect(game.puzzleBank.length).to.equal(4);
   });
 
 
