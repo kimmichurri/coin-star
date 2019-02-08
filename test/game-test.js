@@ -13,7 +13,9 @@ describe('Testing Game methods and properties', () => {
 
   beforeEach(function() {
     game = new Game();
-    chai.spy.on(domUpdates, ['displayPuzzle', 'highlightCurrentPlayer', 'vowelDisableClicks', 'displayPlayerNames', 'consonantDisableClicks'], () => true);
+    chai.spy.on(domUpdates, ['displayPuzzle', 'highlightCurrentPlayer', 
+    'vowelDisableClicks', 'displayPlayerNames', 'consonantDisableClicks',
+    'updateScoreDisplay', 'reinstateLetterBank', 'removePuzzle'], () => true);
   });
   
   afterEach(function() {
@@ -61,8 +63,26 @@ describe('Testing Game methods and properties', () => {
 
   it('should shift off round one puzzle', () => {
     expect(game.puzzleBank.length).to.equal(0);
+    game.createPlayers(['Casey', 'Jon']); 
+    game.puzzleBank = [ {  
+      category: 'The 90s',
+      number_of_words: 1,
+      total_number_of_letters: 9,
+      first_word: 9, 
+      description:'Puzzles pertaining to the decade in question.',
+      correct_answer: 'Operation',
+    },
+    {  
+      category: 'The 90s',
+      number_of_words: 1,
+      total_number_of_letters: 3,
+      first_word: 3, 
+      description:'Puzzles pertaining to the decade in question.',
+      correct_answer: 'Moo',
+    }
+  ]
     game.increaseRound();
-    expect(game.puzzleBank.length).to.equal(4);
+    expect(game.puzzleBank.length).to.equal(1);
   });
 
 
