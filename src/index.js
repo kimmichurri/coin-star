@@ -49,11 +49,12 @@ $('.letters-in-bank').on('click', (e) => {
     game.players[game.currentPlayer].checkPlayerLetter(game.currentPuzzle, e.target.innerText, wheel.currentSpace);
     let areLettersHidden = domUpdates.revealLetter(e.target.innerText.trim());
     if (!areLettersHidden) {
+      console.log('next round')
       game.increaseRound();
-    }
-    if ($(e.target).hasClass('letters-in-bank')) {
+    } else if ($(e.target).hasClass('letters-in-bank')) {
       $(e.target).addClass('hidden-letter'); 
       game.switchPlayerTurn();
+      console.log('continue round')
     }
 });
 
