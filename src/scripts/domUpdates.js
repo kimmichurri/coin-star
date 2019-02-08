@@ -39,6 +39,12 @@ let domUpdates = {
     })
   },
 
+  removePuzzle(){
+  $('.puzzle-letter-wrapper').each(function(){
+    $(this).remove()
+  })
+},
+
   highlightCurrentPlayer(playerIndex) {
     let podium1 = $('.podium1');
     let podium2 = $('.podium2');
