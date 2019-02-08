@@ -45,6 +45,7 @@ let domUpdates = {
   })
 },
 
+
   highlightCurrentPlayer(playerIndex) {
     let podium1 = $('.podium1');
     let podium2 = $('.podium2');
@@ -97,8 +98,9 @@ let domUpdates = {
     alert('Congratulations! You solved this puzzle! On to the next round!');
   },
 
-  reinstatePuzzleBank() {
+  reinstateLetterBank() {
     $('.letters-in-bank').removeClass('hidden-letter');
+    $('.letters-in-bank').addClass('disable-clicks');
   },
 
   appendEntryBox() {

@@ -59,7 +59,7 @@ class Game {
 
   increaseRound() {
     this.puzzleBank.shift();
-    domUpdates.removePuzzle()
+    domUpdates.removePuzzle();
     this.createPuzzleArray();
     this.players.sort((playerA, playerB) => {
       return playerB.roundCoins - playerA.roundCoins;
@@ -73,6 +73,8 @@ class Game {
       player.updateAllRoundCoins();
       domUpdates.updateScoreDisplay(player.name, player.roundCoins, player.totalCoins);
     });
+
+    domUpdates.reinstateLetterBank();
    
   }
    
