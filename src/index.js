@@ -46,6 +46,8 @@ $('.js-spin-btn').on('click', () => {
 });
 
 $('.letters-in-bank').on('click', (e) => {
+  console.log(game.players);
+  console.log(game.players[game.currentPlayer])
     game.players[game.currentPlayer].checkPlayerLetter(game.currentPuzzle, e.target.innerText, wheel.currentSpace);
     let areLettersHidden = domUpdates.revealLetter(e.target.innerText.trim());
     if (!areLettersHidden) {

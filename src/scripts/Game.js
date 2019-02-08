@@ -3,6 +3,7 @@ import Player from './Player.js'
 import data from '../data.js'
 import helper from './helper.js'
 import domUpdates from './domUpdates.js'
+import BonusWheel from './BonusWheel.js'
 
 class Game {
   constructor() {
@@ -58,7 +59,7 @@ class Game {
 
 
   increaseRound() {
-    if (this.round < 4) {
+    if (this.round === 2) {
       this.round++;
     } 
     else {
@@ -73,19 +74,38 @@ class Game {
     const mappedPlayerNames = this.players.map((player)=> {
       return player.name
     });
+    this.updatePlayerDisplays(mappedPlayerNames);
+    domUpdates.reinstateLetterBank();
+   
+  }
+
+  updatePlayerDisplays(mappedPlayerNames) {
     domUpdates.displayPlayerNames(mappedPlayerNames);
     this.players[0].updateWinnerCoins(this.players[0].roundCoins);
     this.players.forEach((player) => {
       player.updateAllRoundCoins();
       domUpdates.updateScoreDisplay(player.name, player.roundCoins, player.totalCoins);
     });
-
-    domUpdates.reinstateLetterBank();
-   
   }
 
   bonusRound() {
-    //
+    this.wheel = new BonusWheel();
+    this.wheel.createSpaces();
+    console.log(this.wheel);
+    this.players.sort((playerA, playerB) => {
+      return playerB.totalCoins - playerA.totalCoins;
+    });
+    const mappedPlayerNames = this.players.map((player)=> {
+      return player.name
+    });
+    this.players = [this.players[0]];
+    this.currentPlayer = 0;
+    this.updatePlayerDisplays(mappedPlayerNames[0]);
+    domUpdates.highlightCurrentPlayer(0);
+  }
+
+  removeOtherPlayers() {
+    
   }
    
 }
