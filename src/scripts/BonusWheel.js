@@ -2,10 +2,6 @@ import Wheel from './Wheel.js'
 import data from '../data.js';
 import helper from './helper.js'
 
-beforeEach(function () {
-  this.wheel = new BonusWheel({});
-});
-
 class BonusWheel extends Wheel {
   constructor() {
     super();
