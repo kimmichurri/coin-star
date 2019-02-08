@@ -62,6 +62,7 @@ describe('Testing Game methods and properties', () => {
   });
 
   it('should shift off round one puzzle', () => {
+    expect(game.round).to.equal(1);
     expect(game.puzzleBank.length).to.equal(0);
     game.createPlayers(['Casey', 'Jon']); 
     game.puzzleBank = [ {  
@@ -83,6 +84,7 @@ describe('Testing Game methods and properties', () => {
   ]
     game.increaseRound();
     expect(game.puzzleBank.length).to.equal(1);
+    expect(game.round).to.equal(2);
   });
 
 

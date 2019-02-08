@@ -58,6 +58,12 @@ class Game {
 
 
   increaseRound() {
+    if (this.round < 4) {
+      this.round++;
+    } 
+    else {
+      this.bonusRound();
+    }
     this.puzzleBank.shift();
     domUpdates.removePuzzle();
     this.createPuzzleArray();
@@ -76,6 +82,10 @@ class Game {
 
     domUpdates.reinstateLetterBank();
    
+  }
+
+  bonusRound() {
+    //
   }
    
 }
