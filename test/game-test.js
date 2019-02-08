@@ -6,6 +6,7 @@ chai.use(spies);
 
 import Game from '../src/scripts/Game.js';
 import domUpdates from '../src/scripts/domUpdates.js';
+import BonusWheel from '../src/scripts/BonusWheel.js';
 
 
 describe('Testing Game methods and properties', () => {
@@ -88,6 +89,11 @@ describe('Testing Game methods and properties', () => {
     expect(game.puzzleBank.length).to.equal(1);
     expect(game.players[0].totalCoins).to.equal(30);
     expect(game.round).to.equal(2);
+  });
+
+  it('bonus round should instantiate new bonus wheel', () => {
+    game.bonusRound();
+    expect(game.wheel instanceof BonusWheel).to.be.true;
   });
   
 });
