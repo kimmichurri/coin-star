@@ -1,16 +1,20 @@
-## Coin-StAr
+## Coin-Star
 
-Coin-Star is an adorable version of wheel of fortune. Where you can play for coins. This version allows three players to face off solving puzzles. Points are awarded based on the value of the spin. Enjoy Coin-star.
+Coin-Star is an adorable version of Wheel of Fortune. Where you can play for coins. This version allows three players to face off solving puzzles. Points are awarded based on the value of the spin. Enjoy Coin-star.
+
+## Contributors
+
+[Kristen Hallstrom] (https://www.linkedin.com/in/kristenhallstrom/)
+
+[Kim Myers] (https://www.linkedin.com/in/kimberly-achkio-myers-85107a2b/)
 
 ## Set-up
 
-git clone https://github.com/kimmichurri/coin-star
+`Git clone git@github.com:kimmichurri/coin-star.git`
 
-Once you have cloned the repo, install the library dependencies. 
+Run `npm install`: Install the library dependencies. 
 
-Run npm install
-
-run npm start in your terminal
+Run `npm start` in your terminal
 
 go to http://localhost:8080/
 
@@ -27,9 +31,3 @@ go to http://localhost:8080/
 ## Reflection
 
 This was our first project with webpack and jQuery. It was quite a curve learning how to implement those. Our design is cute and easy to navigate. 
-
-Contributors
-
-Kristen Hallstrom
-
-Kim Myers
