@@ -4,9 +4,9 @@ Coin-Star is an adorable version of Wheel of Fortune. Where you can play for coi
 
 ## Contributors
 
-[Kristen Hallstrom] (https://www.linkedin.com/in/kristenhallstrom/)
+[Kristen Hallstrom](https://www.linkedin.com/in/kristenhallstrom/)
 
-[Kim Myers] (https://www.linkedin.com/in/kimberly-achkio-myers-85107a2b/)
+[Kim Myers](https://www.linkedin.com/in/kimberly-achkio-myers-85107a2b/)
 
 ## Set-up
 
@@ -16,7 +16,7 @@ Run `npm install`: Install the library dependencies.
 
 Run `npm start` in your terminal
 
-go to http://localhost:8080/
+Go to http://localhost:8080/
 
 ## Wireframe
 
